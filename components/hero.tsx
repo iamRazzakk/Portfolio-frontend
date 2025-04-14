@@ -14,9 +14,9 @@ export default function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
 
   const scrollToNextSection = () => {
-    const nextSection = document.getElementById('about');
+    const nextSection = document.getElementById("about");
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -71,27 +71,63 @@ export default function Hero() {
     >
       <Header />
       <div className="flex-1 container mx-auto px-4 flex flex-col justify-center items-center text-center pt-20 relative z-10">
+        {/* Rotating Border */}
+        <div className="absolute inset-0 overflow-hidden rounded-xl">
+          <div
+            className="
+      absolute top-1/2 left-1/2 w-[150%] h-[300%] 
+      bg-gradient-conic from-transparent via-blue-500 via-pink-500 via-amber-500 to-transparent
+      animate-spin
+      origin-center
+      -z-10
+    "
+          ></div>
+        </div>
+
         <div
           ref={contentRef}
-          className="max-w-3xl backdrop-blur-sm bg-background/10 p-8 rounded-xl border border-primary/20"
+          className="max-w-3xl backdrop-blur-sm bg-background/10 p-8 rounded-xl border border-primary/20 relative z-20"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Hi, I'm <span className="text-primary">Md Abdur Razzak</span>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
+            Hi, I'm{" "}
+            <span className="text-primary text-stroke text-stroke-hover transition-all duration-300">
+              Md Abdur Razzak
+            </span>
           </h1>
+
           <div className="h-12 mb-6">
-            <h2 className="text-2xl md:text-3xl font-medium">
-              <span className="text-primary">{typedText}</span>
+            <h2 className="text-2xl md:text-3xl font-medium italic">
+              {typedText.split("").map((char, index) => (
+                <span
+                  key={index}
+                  className="
+          text-white 
+          hover:text-blue-400 
+          hover:font-bold 
+          hover:scale-125 
+          transition-all 
+          duration-50 
+          ease-in-out 
+          inline-block
+        "
+                >
+                  {char === " " ? "\u00A0" : char}
+                </span>
+              ))}
               <span className="animate-blink">|</span>
             </h2>
           </div>
-        
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white">
+            <Button
+              className="bg-[#002bff] hover:bg-white hover:text-[#60a5fa] text-white"
+              variant="outline"
+            >
               View My Work
             </Button>
             <Button
               variant="outline"
-              className="border-primary/50 hover:bg-primary/10"
+              className=" border-primary/50 hover:bg-primary/10"
             >
               Contact Me
             </Button>
@@ -103,7 +139,9 @@ export default function Hero() {
               size="icon"
               aria-label="GitHub"
               className="social-icon"
-              onClick={() => window.open('https://github.com/IamRazzakk', '_blank')}
+              onClick={() =>
+                window.open("https://github.com/IamRazzakk", "_blank")
+              }
             >
               <Github className="h-5 w-5" />
             </Button>
@@ -112,7 +150,9 @@ export default function Hero() {
               size="icon"
               aria-label="LinkedIn"
               className="social-icon"
-              onClick={() => window.open('https://www.linkedin.com/in/razzak392/', '_blank')}
+              onClick={() =>
+                window.open("https://www.linkedin.com/in/razzak392/", "_blank")
+              }
             >
               <Linkedin className="h-5 w-5" />
             </Button>
@@ -121,7 +161,7 @@ export default function Hero() {
               size="icon"
               aria-label="Twitter"
               className="social-icon"
-              onClick={()=> window.open("https://x.com/rakibt23p", '_blank')}
+              onClick={() => window.open("https://x.com/rakibt23p", "_blank")}
             >
               <Twitter className="h-5 w-5" />
             </Button>
@@ -130,7 +170,7 @@ export default function Hero() {
               size="icon"
               aria-label="Twitter"
               className="social-icon"
-              onClick={()=> window.open("https://dev.to/iamrazzakk", '_blank')}
+              onClick={() => window.open("https://dev.to/iamrazzakk", "_blank")}
             >
               <Rss className="h-5 w-5" />
             </Button>

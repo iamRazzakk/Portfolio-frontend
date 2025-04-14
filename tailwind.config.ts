@@ -1,4 +1,5 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   darkMode: ["class"],
@@ -26,7 +27,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(230, 100%, 50%)", // Deep blue with slight purple tint
+          DEFAULT: "#002bff",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -80,7 +81,22 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
 
-export default config
+    // 👇 Custom text-stroke plugin
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.text-stroke': {
+          '-webkit-text-stroke': '1.5px #002bff',
+          'color': 'transparent',
+        },
+        '.text-stroke-hover:hover': {
+          '-webkit-text-stroke': '1.5px #ffffff',
+        },
+      });
+    }),
+  ],
+} satisfies Config;
+
+export default config;
