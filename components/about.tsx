@@ -89,8 +89,8 @@ export default function About() {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="text-center mb-16">
           <h2
-            className="text-3xl md:text-4xl font-bold mb-4 section-heading"
-            ref={headingRef}
+            className="text-3xl md:text-4xl font-bold mb-4 section-heading text-white" // Added text-white
+            // ref={headingRef}
           >
             About Me
           </h2>
@@ -121,7 +121,7 @@ export default function About() {
           <div ref={textContainerRef}>
             <h3 className="text-xl sm:text-2xl font-bold mb-4">
               I'm Abdur Razzak, a{" "}
-              <span className="text-primary">MERN Stack Developer</span>
+              <span className="text-[#60a5fa]">MERN Stack Developer</span>
             </h3>
             <p className="text-muted-foreground mb-4 text-sm sm:text-base">
               I'm passionate about creating beautiful, functional, and
@@ -139,11 +139,11 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {[
                 {
-                  icon: <Mail className="text-primary h-5 w-5" />,
+                  icon: <Mail className="text-[#60a5fa] h-5 w-5" />,
                   text: "mdabdurrazzakrakib290@gmail.com",
                 },
                 {
-                  icon: <MapPin className="text-primary h-5 w-5" />,
+                  icon: <MapPin className="text-[#60a5fa] h-5 w-5" />,
                   text: "Dhaka, Bangladesh",
                 },
               ].map((item, i) => (
@@ -164,7 +164,7 @@ export default function About() {
 
             {/* Download Button */}
             <a href="/resume.pdf" download="Md Abdur Razzak (MERN Stack).pdf">
-              <Button className="bg-primary hover:scale-105 hover:brightness-110 transition-all duration-300">
+              <Button className="bg-[#60a5fa] hover:bg-primary/10  text-white hover:scale-105 hover:brightness-110 transition-all duration-300">
                 <Download className="mr-2 h-4 w-4" /> Download CV
               </Button>
             </a>

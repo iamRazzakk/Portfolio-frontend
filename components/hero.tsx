@@ -115,7 +115,7 @@ export default function Hero() {
               {" "}
               {/* Changed to justify-start */}
               <Button
-                className="bg-[#002bff] hover:bg-white hover:text-[#60a5fa] text-white"
+                className="bg-[#60a5fa] hover:bg-primary/10  text-white"
                 variant="outline"
               >
                 View My Work
