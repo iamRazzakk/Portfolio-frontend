@@ -88,7 +88,7 @@ const config = {
     plugin(function ({ addUtilities }) {
       addUtilities({
         '.text-stroke': {
-          '-webkit-text-stroke': '1.5px #002bff',
+          '-webkit-text-stroke': '1.5px #60a5fa',
           'color': 'transparent',
         },
         '.text-stroke-hover:hover': {
