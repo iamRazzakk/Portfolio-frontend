@@ -89,7 +89,7 @@ export default function About() {
       <div className="container mx-auto px-4 z-10 relative">
         <div className="text-center mb-16">
           <h2
-            className="text-3xl md:text-4xl font-bold mb-4 section-heading text-white" // Added text-white
+            className="text-3xl md:text-4xl font-bold mb-4 section-heading text-white"
             // ref={headingRef}
           >
             About Me
@@ -103,7 +103,7 @@ export default function About() {
             className="relative profile-image-container mx-auto md:mx-0 w-[80%] sm:w-[70%] md:w-full"
             ref={imageRef}
           >
-            <div className="aspect-square rounded-2xl overflow-hidden border-4 border-primary/20 shadow-xl">
+            <div className="aspect-square rounded-2xl overflow-hidden border-4 border-primary/20 shadow-xl lg:w-[80%]">
               <Image
                 src={profileImage}
                 alt="Md Abdur Razzak image"

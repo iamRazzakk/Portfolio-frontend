@@ -6,7 +6,7 @@ import { ArrowDown, Github, Linkedin, Rss, Twitter } from "lucide-react";
 import Header from "@/components/header";
 import { gsap } from "gsap";
 import Image from "next/image";
-import profileImage from "@/public/IMG_20250324_140008.jpg";
+import profileImage from "@/public/Office.png";
 
 export default function Hero() {
   const [typedText, setTypedText] = useState("");

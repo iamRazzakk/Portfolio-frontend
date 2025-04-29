@@ -1,9 +1,9 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="relative py-12">
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-grid-pattern opacity-20 z-[-1]" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center">
-          <Link href="/" className="text-2xl font-bold text-primary mb-6">
+          <Link href="/" className="text-2xl font-bold text-white mb-6">
             Md Abdur Razzak
           </Link>
 
@@ -31,19 +31,34 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <Link href="#home" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#home"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Home
             </Link>
-            <Link href="#about" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#about"
+              className="text-sm hover:text-primary transition-colors"
+            >
               About
             </Link>
-            <Link href="#skills" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#skills"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Skills
             </Link>
-            <Link href="#projects" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#projects"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Projects
             </Link>
-            <Link href="#contact" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#contact"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Contact
             </Link>
           </div>
@@ -54,5 +69,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
